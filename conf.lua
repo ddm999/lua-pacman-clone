@@ -1,6 +1,6 @@
 function love.conf(t)
     t.identity = "pacmanclone"                   -- The name of the save directory (string)
-    t.version = "11.1"                -- The LÖVE version this game was made for (string)
+    t.version = "0.9.1"                -- The LÖVE version this game was made for (string)
     t.console = false                  -- Attach a console (boolean, Windows only)
 
     t.window.title = "pacmanclonetest"        -- The window title (string)
