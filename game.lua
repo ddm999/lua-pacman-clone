@@ -196,8 +196,8 @@ function game.love.load()
 		enabled = false,
 		nomnom = false,
 		type = "speed",
-		color_fill = {128, 32, 32},
-		color_outline = {255, 64, 64},
+		color_fill = {128/255, 32/255, 32/255},
+		color_outline = {255/255, 64/255, 64/255},
 		pickups_left = 5,
 		starttime = nil
 	}
@@ -630,42 +630,42 @@ function game.love.draw()
 	love.graphics.push()
 	love.graphics.scale(scale)
 
-	love.graphics.setColor( 32, 32, 64 )
+	love.graphics.setColor( 32/255, 32/255, 64/255 )
 	love.graphics.rectangle("fill", 18, 2, 174, 28)
-	love.graphics.setColor( 192, 192, 192 )
+	love.graphics.setColor( 192/255, 192/255, 192/255 )
 	love.graphics.rectangle("line", 18, 2, 174, 28)
-	love.graphics.setColor( 192, 192, 192 )
+	love.graphics.setColor( 192/255, 192/255, 192/255 )
 	love.graphics.print("Score: "..displayscore, 18, 2)
-	love.graphics.setColor( 32, 32, 64 )
+	love.graphics.setColor( 32/255, 32/255, 64/255 )
 	love.graphics.rectangle("fill", 450, 2, 174, 28)
-	love.graphics.setColor( 192, 192, 192 )
+	love.graphics.setColor( 192/255, 192/255, 192/255 )
 	love.graphics.rectangle("line", 450, 2, 174, 28)
-	love.graphics.setColor( 192, 192, 192 )
+	love.graphics.setColor( 192/255, 192/255, 192/255 )
 	if pause then love.graphics.print("Game Paused", 458, 2) end
-	love.graphics.setColor( 32, 32, 64 )
+	love.graphics.setColor( 32/255, 32/255, 64/255 )
 	love.graphics.rectangle("fill", 34, 450, 574, 28)
-	love.graphics.setColor( 192, 192, 192 )
+	love.graphics.setColor( 192/255, 192/255, 192/255 )
 	love.graphics.rectangle("line", 34, 450, 574, 28)
-	love.graphics.setColor( 192, 192, 192 )
+	love.graphics.setColor( 192/255, 192/255, 192/255 )
 	love.graphics.print(debugtextalpha, 34, 450)
 	love.graphics.print(debugtextbeta, 322, 450)
 	
-	love.graphics.setColor( 64, 64, 0 )
+	love.graphics.setColor( 64/255, 64/255, 0 )
 	love.graphics.rectangle("fill", 194, 2, 254, 28)
-	love.graphics.setColor( 192, 192, 192 )
+	love.graphics.setColor( 192/255, 192/255, 192/255 )
 	love.graphics.rectangle("line", 194, 2, 254, 28)
 	if newhighscore then
-		love.graphics.setColor( 192, 192, 64 )
+		love.graphics.setColor( 192/255, 192/255, 64/255 )
 	else
-		love.graphics.setColor( 192, 192, 192 )
+		love.graphics.setColor( 192/255, 192/255, 192/255 )
 	end
 	love.graphics.print("Highscore: "..displayhighscore, 210, 2)
 	
-	love.graphics.setColor( 32, 32, 64 )
+	love.graphics.setColor( 32/255, 32/255, 64/255 )
 	love.graphics.rectangle("fill", 2, 64, 14, 160)
-	love.graphics.setColor( 64, 64, 0 )
+	love.graphics.setColor( 64/255, 64/255, 0/255 )
 	love.graphics.rectangle("fill", 16, 64, 14, 160)
-	love.graphics.setColor( 160, 160, 160 )
+	love.graphics.setColor( 160/255, 160/255, 160/255 )
 	love.graphics.rectangle("line", 2, 64, 28, 160)
 	love.graphics.print(mapnamedisp1, 8, 66)
 	love.graphics.print(mapnamedisp2, 8, 98)
@@ -673,12 +673,12 @@ function game.love.draw()
 	love.graphics.print(mapnamedisp4, 8, 162)
 	love.graphics.print(mapnamedisp5, 8, 194)
 	
-	love.graphics.setColor( 255, 255, 255 )
+	love.graphics.setColor( 255/255, 255/255, 255/255 )
 	love.graphics.draw(playerImage, player.act_x+16, player.act_y+16, math.rad(player.facing*90), 1, 1, 14, 14)
 	
-	love.graphics.setColor( 64, 64, 192 )
+	love.graphics.setColor( 64/255, 64/255, 192/255 )
 	love.graphics.rectangle("fill", pickup.x+2, pickup.y+2, 28, 28)
-	love.graphics.setColor( 192, 192, 192 )
+	love.graphics.setColor( 192/255, 192/255, 192/255 )
 	love.graphics.rectangle("line", pickup.x+2, pickup.y+2, 28, 28)
 	
 	if powerup.enabled then
@@ -688,32 +688,32 @@ function game.love.draw()
 		love.graphics.rectangle("line", 290, 258, 60, 28)
 	end
 	
-	love.graphics.setColor( 128, 128, 128 )
+	love.graphics.setColor( 128/255, 128/255, 128/255 )
     love.graphics.rectangle("fill", ghostAlpha.act_x+2, ghostAlpha.act_y+2, 28, 28)
-	love.graphics.setColor( 256, 256, 256 )
+	love.graphics.setColor( 255/255, 255/255, 255/255 )
     love.graphics.rectangle("line", ghostAlpha.act_x+2, ghostAlpha.act_y+2, 28, 28)
 	
-	love.graphics.setColor( 128, 128, 128 )
+	love.graphics.setColor( 128/255, 128/255, 128/255 )
     love.graphics.rectangle("fill", ghostBeta.act_x+2, ghostBeta.act_y+2, 28, 28)
-	love.graphics.setColor( 256, 256, 256 )
+	love.graphics.setColor( 255/255, 255/255, 255/255 )
     love.graphics.rectangle("line", ghostBeta.act_x+2, ghostBeta.act_y+2, 28, 28)
 	
 	if freezeGrids[1].enabled then
-		love.graphics.setColor( 32, 32, 255 )
+		love.graphics.setColor( 32/255, 32/255, 255/255 )
 		love.graphics.rectangle("fill", freezeGrids[1].grid_x+4, freezeGrids[1].grid_y+4, 24, 24)
-		love.graphics.setColor( 64, 64, 64 )
+		love.graphics.setColor( 64/255, 64/255, 64/255 )
 		love.graphics.rectangle("line", freezeGrids[1].grid_x+4, freezeGrids[1].grid_y+4, 24, 24)
 	end
 	if freezeGrids[2].enabled then
-		love.graphics.setColor( 32, 32, 255 )
+		love.graphics.setColor( 32/255, 32/255, 255/255 )
 		love.graphics.rectangle("fill", freezeGrids[2].grid_x+4, freezeGrids[2].grid_y+4, 24, 24)
-		love.graphics.setColor( 64, 64, 64 )
+		love.graphics.setColor( 64/255, 64/255, 64/255 )
 		love.graphics.rectangle("line", freezeGrids[2].grid_x+4, freezeGrids[2].grid_y+4, 24, 24)
 	end
 	if freezeGrids[3].enabled then
-		love.graphics.setColor( 32, 32, 255 )
+		love.graphics.setColor( 32/255, 32/255, 255/255 )
 		love.graphics.rectangle("fill", freezeGrids[3].grid_x+4, freezeGrids[3].grid_y+4, 24, 24)
-		love.graphics.setColor( 64, 64, 64 )
+		love.graphics.setColor( 64/255, 64/255, 64/255 )
 		love.graphics.rectangle("line", freezeGrids[3].grid_x+4, freezeGrids[3].grid_y+4, 24, 24)
 	end
 	
@@ -734,11 +734,11 @@ function game.love.draw()
     for y=1, #mapAlpha do
         for x=1, #mapAlpha[y] do
             if mapAlpha[y][x] == 1 then
-				love.graphics.setColor( 64, 64, 128 )
+				love.graphics.setColor( 64/255, 64/255, 128/255 )
                 love.graphics.rectangle("line", (x * 32)+2, (y * 32)+2, 28, 28)
             end
 			if mapAlpha[y][x] == 2 then
-				love.graphics.setColor( 128, 64, 64 )
+				love.graphics.setColor( 128/255, 64/255, 64/255 )
                 love.graphics.rectangle("line", (x * 32)+2, (y * 32)+2, 28, 28)
             end
         end
@@ -747,11 +747,11 @@ function game.love.draw()
     for y=1, #mapBeta do
         for x=1, #mapBeta[y] do
             if mapBeta[y][x] == 1 then
-				love.graphics.setColor( 64, 64, 128 )
+				love.graphics.setColor( 64/255, 64/255, 128/255 )
                 love.graphics.rectangle("line", (x * 32)+2, (y * 32)+2, 28, 28)
             end
 			if mapBeta[y][x] == 2 then
-				love.graphics.setColor( 128, 64, 64 )
+				love.graphics.setColor( 128/255, 64/255, 64/255 )
                 love.graphics.rectangle("line", (x * 32)+2, (y * 32)+2, 28, 28)
             end
         end
@@ -760,11 +760,11 @@ function game.love.draw()
     for y=1, #mapChar do
         for x=1, #mapChar[y] do
             if mapChar[y][x] == 1 then
-				love.graphics.setColor( 64, 64, 128 )
+				love.graphics.setColor( 64/255, 64/255, 128/255 )
                 love.graphics.rectangle("line", (x * 32)+2, (y * 32)+2, 28, 28)
             end
 			if mapChar[y][x] == 2 then
-				love.graphics.setColor( 128, 64, 64 )
+				love.graphics.setColor( 128/255, 64/255, 64/255 )
                 love.graphics.rectangle("line", (x * 32)+2, (y * 32)+2, 28, 28)
             end
         end
@@ -773,11 +773,11 @@ function game.love.draw()
     for y=1, #mapDelta do
         for x=1, #mapDelta[y] do
             if mapDelta[y][x] == 1 then
-				love.graphics.setColor( 64, 64, 128 )
+				love.graphics.setColor( 64/255, 64/255, 128/255 )
                 love.graphics.rectangle("line", (x * 32)+2, (y * 32)+2, 28, 28)
             end
 			if mapDelta[y][x] == 2 then
-				love.graphics.setColor( 128, 64, 64 )
+				love.graphics.setColor( 128/255, 64/255, 64/255 )
                 love.graphics.rectangle("line", (x * 32)+2, (y * 32)+2, 28, 28)
             end
         end
@@ -786,11 +786,11 @@ function game.love.draw()
     for y=1, #mapEpsil do
         for x=1, #mapEpsil[y] do
             if mapEpsil[y][x] == 1 then
-				love.graphics.setColor( 64, 64, 128 )
+				love.graphics.setColor( 64/255, 64/255, 128/255 )
                 love.graphics.rectangle("line", (x * 32)+2, (y * 32)+2, 28, 28)
             end
 			if mapEpsil[y][x] == 2 then
-				love.graphics.setColor( 128, 64, 64 )
+				love.graphics.setColor( 128/255, 64/255, 64/255 )
                 love.graphics.rectangle("line", (x * 32)+2, (y * 32)+2, 28, 28)
             end
         end

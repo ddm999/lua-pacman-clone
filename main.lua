@@ -92,13 +92,13 @@ function love.draw()
 		love.graphics.setFont(font)
 		game.love.draw()
 	elseif current == "menu" then
-		love.graphics.setColor( 32, 32, 64 )
+		love.graphics.setColor( 32/255, 32/255, 64/255 )
 		love.graphics.rectangle("fill", 208, 60, 224, 28)
-		love.graphics.setColor( 64, 64, 0 )
+		love.graphics.setColor( 64/255, 64/255, 0/255 )
 		love.graphics.rectangle("fill", 208, 88, 224, 28)
 		
 		love.graphics.setFont(bigfont)
-		love.graphics.setColor( 192, 192, 192 )
+		love.graphics.setColor( 192/255, 192/255, 192/255 )
 		love.graphics.print("8charact", 212, 64)
 		
 		love.graphics.setFont(font)
